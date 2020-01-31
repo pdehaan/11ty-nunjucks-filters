@@ -1,0 +1,13 @@
+---
+title: Nunjucks `sum` filter test
+tags:
+  - sum
+---
+
+<dl>
+  <dt>Input: <code>{% raw %}{{ [1, 2, 3] | sum }}{% endraw %}</code></dt>
+  <dd>Output: <code>{{ [1, 2, 3] | sum | dump }}</code></dd>
+
+  <dt>Input: <code>{% raw %}{{ [1.4, 2.7, 3.23] | sum }}{% endraw %}</code></dt>
+  <dd>Output: <code>{{ [1.4, 2.7, 3.23] | sum | dump }}</code></dd>
+</dl>

@@ -1,0 +1,47 @@
+---
+title: nunjucks `capitalize`, `title`, `upper`, `lower` filter test
+strings:
+  - THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
+  - The Quick Brown Fox Jumps Over the Lazy Dog.
+  - The quick brown fox jumps over the lazy dog.
+  - the quick brown fox jumps over the lazy dog.
+tags:
+  - capitalize
+  - title
+  - uppercase
+  - lowercase
+---
+
+<h2>Example 1: "capitalize" filter</h2>
+{%- for string in strings %}
+  <p>input: {{ string }}<br/>
+    output: {{ string | capitalize }}</p>
+  {# <p>{% filter capitalize %}{{ string }}{% endfilter %}</p> #}
+{%- endfor %}
+
+<hr/>
+
+<h2>Example 2: "title" filter</h2>
+{%- for string in strings %}
+  <p>input: {{ string }}<br/>
+    output: {{ string | title }}</p>
+  {# <p>{% filter title %}{{ string }}{% endfilter %}</p> #}
+{%- endfor %}
+
+<hr/>
+
+<h2>Example 3: "upper" filter</h2>
+{%- for string in strings %}
+  <p>input: {{ string }}<br/>
+    output: {{ string | upper }}</p>
+  {# <p>{% filter upper %}{{ string }}{% endfilter %}</p> #}
+{%- endfor %}
+
+<hr/>
+
+<h2>Example 4: "lower" filter</h2>
+{%- for string in strings %}
+  <p>input: {{ string }}<br/>
+    output: {{ string | lower }}</p>
+  {# <p>{% filter lower %}{{ string }}{% endfilter %}</p> #}
+{%- endfor %}

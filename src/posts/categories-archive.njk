@@ -1,0 +1,20 @@
+{#
+---
+title: Categories Archive
+pagination:
+  data: collections.categories
+  size: 4
+  alias: category
+permalink: "category/{{ pagination.pageNumber + 1 }}/"
+---
+
+{%- for post in category %}
+<p>{{ post.title }} &mdash; {{ post.author | default("Anonymous") }}</p>
+{%- endfor %}
+
+<nav>
+  {% if pagination.previousPageHref %}<a href="{{ pagination.previousPageHref }}">Previous page</a>{% else %}Previous page{% endif %}
+  | Page {{ pagination.pageNumber + 1 }} of {{ pagination.links.length }} |
+  {% if pagination.nextPageHref %}<a href="{{ pagination.nextPageHref }}">Next page</a>{% else %}Next page{% endif %}
+</nav>
+#}

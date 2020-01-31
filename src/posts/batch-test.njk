@@ -1,0 +1,24 @@
+---
+title: nunjucks `batch` filter test
+strings:
+  - one
+  - two
+  - three
+  - four
+  - five
+  - six
+  - seven
+  - eight
+tags:
+  - batch
+---
+
+<p>
+{% set delimiter = joiner("|") %}
+{%- for batch in strings | batch(3) %}
+  {{ delimiter() }}
+  {%- for item in batch %}
+    {{ item }}
+  {%- endfor %}
+{%- endfor %}
+</p>

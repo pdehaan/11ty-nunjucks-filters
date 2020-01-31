@@ -1,0 +1,12 @@
+---
+title: nunjucks `abs` filter test
+tags:
+  - abs
+---
+
+{%- for idx in range(-2, 3) %}
+<p>idx: {{ idx }}, idx|abs: {{ idx | abs }}</p>
+{%- endfor %}
+
+<hr />
+<p><code>abs -111</code> = {% filter abs %}-111{% endfilter %}</p>

@@ -1,0 +1,12 @@
+---
+layout: layouts/default.njk
+---
+
+<article class="post">
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
+  {{ content | trim | safe }}
+</article>
+
+<nav>{{ tags | dump }}</nav>

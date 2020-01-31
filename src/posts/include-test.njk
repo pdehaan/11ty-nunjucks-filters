@@ -1,0 +1,17 @@
+---
+title: nunjucks `include` test
+tags:
+  - include
+---
+
+<p>Including "foo.njk", or not. Maybe it's missing.</p>
+
+{# This won't find "foo.njk" and will ignore the `include` call (and not throw an error). #}
+{% include "foo.njk" ignore missing %}
+
+{# This won't find "foo.njk" and will ignore the `include` call (and not throw an error). #}
+{% include "foo" + ".njk" ignore missing %}
+
+{% include "bar.njk" %}
+
+<p><strong>Done!</strong></p>

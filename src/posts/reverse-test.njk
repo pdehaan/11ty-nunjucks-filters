@@ -1,0 +1,15 @@
+---
+title: reverse filter test
+tags:
+  - reverse
+---
+
+<h2>Example 1: Reverse characters in a string</h2>
+<p>Input: <code>&lbrace;&lbrace; "The quick brown fox" | reverse &rbrace;&rbrace;</code></p>
+<p>{{ "The quick brown fox" | reverse | dump(2) }}</p>
+
+<hr />
+
+<h2>Example 2: Reverse items in an array</h2>
+<p>Input: <code>&lbrace;&lbrace; ["The", "quick", "brown", "fox"] | reverse &rbrace;&rbrace;</code></p>
+<p>Output: {{ ["The", "quick", "brown", "fox"] | reverse | dump(2) }}</p>

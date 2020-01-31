@@ -1,0 +1,19 @@
+{#
+---
+pagination:
+  data: datu
+  size: 1
+  alias: p
+permalink: "p/{{ p }}/"
+
+renderData:
+  count: "{{ range(1,5) }}"
+datu: range(1, 3)
+---
+
+p is {{ p }}!
+
+{{ renderData | dump(2) }}
+
+{{ datu }}
+#}

@@ -1,0 +1,31 @@
+{
+  "name": "11ty-nunjucks-filters",
+  "description": "Testing default nunjucks filters with Eleventy",
+  "version": "1.0.0",
+  "author": "Peter deHaan <peter@deseloper.com> (https://about.me/peterdehaan)",
+  "bugs": {
+    "url": "https://github.com/pdehaan/11ty-nunjucks-filters/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "del": "^5.1.0"
+  },
+  "homepage": "https://github.com/pdehaan/11ty-nunjucks-filters#readme",
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "filters"
+  ],
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdehaan/11ty-nunjucks-filters.git"
+  },
+  "scripts": {
+    "build": "eleventy",
+    "format": "npx prettier _site/**/*.html --write",
+    "postbuild": "npm run format",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

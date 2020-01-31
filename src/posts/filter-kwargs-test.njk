@@ -1,0 +1,22 @@
+---
+title: nunjucks filter `kwargs` test
+tags:
+  - kwargs
+---
+
+<pre><code>
+// .eleventy.js (snippet)
+eleventyConfig.addFilter("add5", (value, kwargs = {}) => {
+  return value + Number(kwargs.foo || 5) + Number(kwargs.bar || 10);
+});
+</code></pre>
+
+<h2>Example 1: No parameters to `add5()` filter</h2>
+<p>In this example, we take our initial number (5) and then use the default values for the `foo` and `bar` kwargs (5 and 10, respectively).</p>
+<p><code>&lbrace;&lbrace; 5 | add5 &rbrace;&rbrace;</code> = 5+5+10 = {{ 5 | add5 }}</p>
+
+<hr/>
+
+<h2>Example 2: kwargs of 8 and 21 passed to the `add5()` filter</h2>
+<p>In this example, we take our initial number (5) and then pass named parameters for the `foo` and `bar` kwargs (<code>foo=21</code> and <code>bar=8</code>, respectively).</p>
+<p><code>&lbrace;&lbrace; 5 | add5(bar=8, foo=21) &rbrace;&rbrace;</code> = 5+21+8 = {{ 5 | add5(bar=8, foo=21) }}</p>

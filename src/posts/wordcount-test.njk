@@ -1,0 +1,30 @@
+---
+title: Nunjucks `wordcount` filter test
+tags:
+  - trim
+  - wordcount
+---
+
+{# via https://lipsum.com/feed/html #}
+{%- set copy %}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula ac neque porta ultricies. Suspendisse quis luctus nisi. Integer tincidunt, ipsum vitae vestibulum sollicitudin, mi quam blandit velit, luctus suscipit arcu ex non diam. Suspendisse elementum magna augue, id congue est venenatis ac. Vestibulum auctor, tellus ut maximus sollicitudin, libero nisi eleifend metus, quis venenatis dui urna sit amet orci. Fusce mi lacus, euismod eget diam ut, laoreet lobortis nibh. Integer vulputate nunc eget diam pellentesque, et tristique libero sodales. Nam non cursus velit. Pellentesque ac placerat tellus. Nullam a pulvinar elit, sit amet lacinia arcu. Integer sed libero nec ante hendrerit venenatis nec a justo.</p>
+  <p>In in mollis tellus, vitae condimentum neque. Etiam quis ex quis purus feugiat dictum vel eget purus. Ut vitae tortor sed urna finibus ornare. In consectetur gravida interdum. Praesent tincidunt sem nulla, nec lacinia elit sollicitudin et. Nunc semper faucibus hendrerit. Suspendisse sem augue, blandit quis varius eu, commodo vel neque. Donec pharetra scelerisque pharetra.</p>
+  <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse vel nisi ut ligula volutpat convallis sed in justo. Maecenas at felis turpis. Proin ac tincidunt nulla. Proin varius ullamcorper lectus, aliquet imperdiet leo iaculis ac. Praesent nec ullamcorper ipsum, mollis auctor libero. Ut pharetra est lacus, ut eleifend urna malesuada in. Vestibulum pulvinar quam vel tellus mollis vestibulum. Duis mauris tortor, viverra eu dictum at, vestibulum eu quam. Aenean euismod ullamcorper ipsum, placerat congue massa sodales sit amet. Phasellus dignissim efficitur nulla non posuere. Aliquam sed porta lorem.</p>
+  <p>Morbi libero lorem, tincidunt quis lectus nec, convallis euismod metus. Curabitur consequat pretium congue. Phasellus suscipit leo nec massa lacinia, sodales imperdiet velit tempor. Sed sapien nisi, rhoncus et interdum in, luctus vitae arcu. Pellentesque sodales, purus quis consectetur tempor, nibh mi tincidunt quam, non sodales felis leo et mi. Nulla consequat pulvinar euismod. Proin ultricies blandit velit a sodales. Nulla posuere vestibulum mauris, aliquam imperdiet orci ullamcorper eget. In hac habitasse platea dictumst. In rutrum ex at cursus euismod. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+  <p>Nam fringilla neque neque, vel faucibus nisl sodales consequat. Donec eget massa vitae mi sagittis commodo sit amet ac nibh. Nam pharetra justo ac urna pharetra gravida. Mauris pretium, odio in hendrerit faucibus, enim metus maximus tortor, non fringilla lorem risus ac leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec commodo porta justo, nec viverra ex dapibus nec. Sed faucibus ultricies tellus in gravida. Nunc vehicula egestas nunc, a dapibus nibh suscipit sit amet. Sed porta a sapien id consequat. Vivamus ac nunc mauris. Vivamus egestas semper orci euismod pretium. Suspendisse potenti.</p>
+{%- endset %}
+
+<blockquote>
+  {{ copy | trim | safe }}
+</blockquote>
+
+<dl>
+  <dt>Words:</dt>
+  <dd>{{ copy | wordcount }}</dd>
+
+  <dt>Characters:</dt>
+  <dd>{{ copy | length }}</dd>
+
+  <dt>Reading time:</dt>
+  <dd>{{ copy | wordcount | readingTime | float }} minutes</dd>
+</dl>
